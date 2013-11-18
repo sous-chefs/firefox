@@ -1,7 +1,7 @@
 Description
 ===========
 
-This cookbook installs Firefox 17.0.1
+This cookbook installs Firefox 25.0.1
 
 Requirements
 ============
