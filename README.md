@@ -1,7 +1,7 @@
 Description
 ===========
 
-This cookbook installs Firefox 25.0.1
+This cookbook installs Firefox 30.0.0
 
 Requirements
 ============
@@ -20,6 +20,7 @@ Attributes
 ==========
 
 * http_url: URL for the installer package.  Defaults to a mirror on leaseweb.com
+* version: Version of the chef client to download.  If the default http_url is specified this is used to build the download URL
 
 Usage
 =====

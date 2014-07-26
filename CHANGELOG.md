@@ -1,3 +1,8 @@
+## 1.1.0
+* Install Firefox 30.0.0
+* Switch to the new URL for the Firefox download CDN
+* Add a new attribute for defining what version of Firefox to download ['firefox']['version']
+
 ## 1.0.7:
 * Install Firefox 25.0.1
 

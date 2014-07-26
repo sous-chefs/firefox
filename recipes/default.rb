@@ -2,6 +2,7 @@
 # Recipe:: default
 #
 # Copyright 2012, Webtrends, Inc.
+# Copyright 2014, Limelight Networks, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,7 +17,7 @@
 # limitations under the License.
 
 if platform?('windows')
-  windows_package 'Mozilla Firefox 25.0.1 (x86 en-US)' do
+  windows_package "Mozilla Firefox #{node['firefox']['version']} (x86 en-US)" do
     source node['firefox']['http_url']
     installer_type :custom
     options '-ms'

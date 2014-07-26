@@ -4,6 +4,7 @@
 # Attribute:: default
 #
 # Copyright:: Copyright (c) 2012 Webtrends Inc
+# Copyright:: Copyright (c) 2014 Limelight Networks, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,4 +19,5 @@
 # limitations under the License.
 #
 
-default['firefox']['http_url'] = 'http://download.cdn.mozilla.net/pub/mozilla.org/firefox/releases/25.0.1/win32/en-US/Firefox%20Setup%2025.0.1.exe'
+default['firefox']['version'] = '30.0'
+default['firefox']['http_url'] = "https://download-installer.cdn.mozilla.net/pub/firefox/releases/latest/win32/en-US/Firefox%20Setup%20#{node['firefox']['version']}.exe"
