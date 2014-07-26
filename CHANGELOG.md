@@ -1,3 +1,6 @@
+## 1.0.7:
+* Install Firefox 25.0.1
+
 ## 1.0.6:
 * Install Firefox 17.0.1
 
