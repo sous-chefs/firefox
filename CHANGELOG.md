@@ -1,3 +1,6 @@
+## 1.1.1
+* Install Firefox 32.0.3
+
 ## 1.1.0
 * Install Firefox 30.0.0
 * Switch to the new URL for the Firefox download CDN
