@@ -17,8 +17,9 @@
 # limitations under the License.
 
 if platform?('windows')
-  windows_package "Mozilla Firefox #{node['firefox']['version']} (x86 en-US)" do
-    source node['firefox']['http_url']
+  filename = firefox_executable
+  windows_package "Mozilla Firefox #{firefox_ascertain_version(filename)} #{node['firefox']['lang']}" do
+    source "#{firefox_base_uri}/#{filename}"
     installer_type :custom
     options '-ms'
     action :install

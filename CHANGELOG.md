@@ -1,3 +1,9 @@
+## 2.0.0
+* Automatically determine latest Firefox package version
+* Add firefox_version method that returns version installed
+* Add a ability to select language 
+* Replace download url with releases uri
+
 ## 1.1.1
 * Install Firefox 32.0.3
 
