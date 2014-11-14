@@ -4,7 +4,7 @@ describe 'firefox::default' do
   context 'determine latest version' do
     let(:chef_run) do
       ChefSpec::Runner.new(platform: 'windows', version: '2008R2') do
-        allow_any_instance_of(Chef::Recipe).to receive(:firefox_executable) { 'Firefox%20Setup%2032.0.3.exe' }
+        allow_any_instance_of(Chef::Recipe).to receive(:firefox_package) { 'Firefox%20Setup%2032.0.3.exe' }
       end.converge(described_recipe)
     end
 
