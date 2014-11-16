@@ -38,5 +38,5 @@ else # assume linux platform
   package 'firefox' do
     version node['firefox']['version'] unless node['firefox']['version'] == 'latest'
     action :nothing
-  end.run_action(:install) # install at compile time so version is available during convergence
+  end.run_action(:upgrade) # install at compile time so version is available during convergence
 end

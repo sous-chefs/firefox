@@ -51,32 +51,17 @@ describe 'firefox_test::default' do
     end
   end
 
-  # context 'linux install of latest version' do
-  #   let(:chef_run) do
-  #     ChefSpec::Runner.new do |node|
-  #       node.set['firefox']['use_package_manager'] = false
-  #       allow_any_instance_of(Chef::Recipe).to receive(:firefox_latest) { 'firefox-32.0.3.tar.bz2' }
-  #     end.converge(described_recipe)
-  #   end
-  #
-  #   it 'installs latest version' do
-  #     expect(chef_run).to install_ark('Mozilla Firefox').with(
-  #       url: 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/latest/linux-x86_64/en-US/'\
-  #         'firefox-32.0.3.tar.bz2',
-  #       version: '32.0.3',
-  #       extension: 'tar.bz2',
-  #       has_binaries: ['firefox']
-  #     )
-  #   end
-  # end
-
   context 'linux install of latest version using package manager' do
     let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
 
     it 'installs latest version' do
-      expect(chef_run).to install_package('firefox').with(
+      expect(chef_run).to upgrade_package('firefox').with(
         version: nil
       )
+    end
+
+    it 'updates package manager' do
+      expect(chef_run).to_not run_execute('apt-get update')
     end
   end
 
@@ -88,7 +73,7 @@ describe 'firefox_test::default' do
     end
 
     it 'installs latest version' do
-      expect(chef_run).to install_package('firefox').with(
+      expect(chef_run).to upgrade_package('firefox').with(
         version: '28.0+build2-0ubuntu2'
       )
     end

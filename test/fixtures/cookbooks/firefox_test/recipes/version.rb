@@ -1,7 +1,9 @@
-v = firefox_version
+include_recipe 'firefox::default'
 
-fail "Firefox version returned is invalid: #{v}" unless v.match(/[\d|.]*/)
+version = firefox_version
+
+fail "Firefox version returned is invalid: #{version}" unless version.match(/[\d|.]*/)
 
 log 'firefox version' do
-  message v
+  message version
 end

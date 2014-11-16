@@ -1,8 +1,10 @@
 Description
 ===========
 
-This cookbook installs the latest en-US version of Firefox by default. You can also install a specific 
-version or lang by overriding attributes.  
+This cookbook installs the `latest` version of Firefox by default. 
+You can also specify a specific version, e.g. `33.0.1`. 
+Windows and Mac OS X platforms provide an option to select a specific language with `en-US` being the default.
+ A `firefox_version` method is also available to retrieve exact version installed.
 
 Requirements
 ============
@@ -10,28 +12,35 @@ Requirements
 Platform
 --------
 
-* Windows Vista
-* Windows 7
-* Windows Server 2012 (R1, R2)
-* Windows Server 2008 (R1, R2)
-* Windows 2003 (R1 / R2)
-* Windows XP
+* CentOS
+* Mac OS X
+* Ubuntu
+* Windows
 
 Cookbooks
 ---------
 
+These cookbooks are referenced with suggests instead of depends, so be sure to upload the cookbook that applies to 
+target platform.
+
+- dmg
 - windows
 
 Attributes
 ==========
 
 * version: Version of firefox to download.  Default is `latest`.
-* lang: Language of firefox to install.  Default is `en-US`.
-* releases_url: URL for the releases directory. 
+* lang: Language of firefox to install.  Windows and Mac OS X only. Default is `en-US`.
+* releases_url: URL for the releases directory for use by Windows and Mac OS X only. Linux platforms use package 
+manager.
 
 Usage
 =====
 
 Include the default recipe on a node's runlist to ensure that Firefox is installed.
 
-A `firefox_version` method is available to retrieve exact version installed.
+An example retrieving the version installed by using `firefox_version`:
+
+```ruby
+v = firefox_version
+```

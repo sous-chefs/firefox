@@ -6,13 +6,15 @@ provisioner:
   name: chef_solo
 
 platforms:
+  - name: ubuntu-12.04
   - name: ubuntu-14.04
+  - name: centos-6.5
   - name: centos-7.0
-  - name: fedora-20
 
 suites:
   - name: firefox_test
     run_list:
       - recipe[firefox_test::default]
       - recipe[firefox_test::version]
+      - recipe[firefox_test::x11]
     attributes:
