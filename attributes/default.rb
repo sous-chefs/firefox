@@ -19,5 +19,6 @@
 # limitations under the License.
 #
 
-default['firefox']['version'] = '32.0.3'
-default['firefox']['http_url'] = "https://download-installer.cdn.mozilla.net/pub/firefox/releases/latest/win32/en-US/Firefox%20Setup%20#{node['firefox']['version']}.exe"
+default['firefox']['version'] = 'latest'
+default['firefox']['lang'] = 'en-US'
+default['firefox']['releases_url'] = 'https://download-installer.cdn.mozilla.net/pub/firefox/releases'

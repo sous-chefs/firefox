@@ -16,13 +16,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if platform?('windows')
-  windows_package "Mozilla Firefox #{node['firefox']['version']} (x86 en-US)" do
-    source node['firefox']['http_url']
+if platform_family?('windows', 'mac_os_x')
+  version = firefox_version
+  url = "#{firefox_base_uri}/#{firefox_package(version)}"
+end
+
+if platform_family?('windows')
+  windows_package "Mozilla Firefox #{version} #{node['firefox']['lang']}" do
+    source url
     installer_type :custom
     options '-ms'
     action :install
   end
-else
-  Chef::Log.warn('Firefox can only be installed on the Windows platform using this cookbook.')
+elsif platform_family?('mac_os_x')
+  dmg_package 'Mozilla Firefox' do
+    dmg_name 'firefox'
+    source url
+    action :install
+  end
+else # assume linux platform
+  package 'firefox' do
+    version node['firefox']['version'] unless node['firefox']['version'] == 'latest'
+    action :nothing
+  end.run_action(:upgrade) # install at compile time so version is available during convergence
 end
