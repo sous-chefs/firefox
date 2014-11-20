@@ -1,5 +1,6 @@
 Description
 ===========
+[![Build Status](https://travis-ci.org/tas50/Firefox.svg?branch=master)](https://travis-ci.org/tas50/Firefox)
 
 This cookbook installs the `latest` version of Firefox by default. 
 You can also specify a specific version, e.g. `33.0.1`. 
