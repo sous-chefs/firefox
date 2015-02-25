@@ -18,3 +18,13 @@ suites:
       - recipe[firefox_test::version]
       - recipe[firefox_test::x11]
     attributes:
+
+  - name: firefox_custom_version_test
+    run_list:
+      - recipe[firefox_test::default]
+    attributes: { firefox: { version: "28.0+build2-0ubuntu2" } }
+    excludes:
+      - ubuntu-12.04
+      - centos-6.5
+      - centos-7.0
+
