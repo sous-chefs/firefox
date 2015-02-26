@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'firefox_test::default' do
   context 'windows install of latest version' do
     let(:chef_run) do
-      ChefSpec::Runner.new(platform: 'windows', version: '2008R2') do
+      ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2') do
         allow_any_instance_of(Chef::Recipe).to receive(:firefox_latest) { 'Firefox%20Setup%2032.0.3.exe' }
       end.converge(described_recipe)
     end
@@ -20,7 +20,7 @@ describe 'firefox_test::default' do
 
   context 'override default version and lang' do
     let(:chef_run) do
-      ChefSpec::Runner.new(platform: 'windows', version: '2008R2') do |node|
+      ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2') do |node|
         node.set['firefox']['version'] = '29.0.1'
         node.set['firefox']['lang'] = 'fr'
       end.converge(described_recipe)
@@ -38,7 +38,7 @@ describe 'firefox_test::default' do
 
   context 'mac install of latest version' do
     let(:chef_run) do
-      ChefSpec::Runner.new(platform: 'mac_os_x', version: '10.7.4') do
+      ChefSpec::SoloRunner.new(platform: 'mac_os_x', version: '10.7.4') do
         allow_any_instance_of(Chef::Recipe).to receive(:firefox_latest) { 'Firefox%2032.0.3.dmg' }
       end.converge(described_recipe)
     end
@@ -52,7 +52,7 @@ describe 'firefox_test::default' do
   end
 
   context 'linux install of latest version using package manager' do
-    let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
+    let(:chef_run) { ChefSpec::SoloRunner.new.converge(described_recipe) }
 
     it 'installs latest version' do
       expect(chef_run).to upgrade_package('firefox').with(
@@ -67,7 +67,7 @@ describe 'firefox_test::default' do
 
   context 'linux install of specific version using package manager' do
     let(:chef_run) do
-      ChefSpec::Runner.new do |node|
+      ChefSpec::SoloRunner.new do |node|
         node.set['firefox']['version'] = '28.0+build2-0ubuntu2'
       end.converge(described_recipe)
     end
