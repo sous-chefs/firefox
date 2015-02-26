@@ -1,3 +1,21 @@
+## 2.0.0
+* Add support for Mac OS X, CentOS, and Ubuntu platforms
+* Automatically determine latest Firefox package version
+* Add firefox_version method that returns version installed
+* Add a ability to select language for Windows and Mac OS X platforms 
+* Replace download URL with releases URL
+
+## 1.1.1
+* Install Firefox 32.0.3
+
+## 1.1.0
+* Install Firefox 30.0.0
+* Switch to the new URL for the Firefox download CDN
+* Add a new attribute for defining what version of Firefox to download ['firefox']['version']
+
+## 1.0.7:
+* Install Firefox 25.0.1
+
 ## 1.0.6:
 * Install Firefox 17.0.1
 
