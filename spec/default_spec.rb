@@ -44,7 +44,7 @@ describe 'firefox_test::default' do
     end
 
     it 'installs latest version' do
-      expect(chef_run).to install_dmg_package('Mozilla Firefox').with(
+      expect(chef_run).to install_dmg_package('Firefox').with(
         source: 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/latest/mac/en-US/Firefox%2032.0.3.dmg',
         dmg_name: 'firefox'
       )

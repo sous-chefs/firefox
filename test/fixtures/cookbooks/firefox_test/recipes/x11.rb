@@ -18,9 +18,9 @@
 #   (process:18177): GLib-CRITICAL **: g_slice_set_config: assertion `sys_page_size == 0' failed
 #   GLib-GIO-Message: Using the 'memory' GSettings backend.  Your settings will not be saved or shared with other applications.
 #
-package 'xauth'
+if platform?('ubuntu')
+  package 'xauth'
 
-# ubuntu firefox package installs .mozilla as root instead of vagrant, you can chown it or remove it completely
-execute 'chown -R vagrant:vagrant ~/.mozilla' do
-  only_if { platform?('ubuntu') }
+  # ubuntu firefox package installs .mozilla as root instead of vagrant, you can chown it or remove it completely
+  execute 'chown -R vagrant:vagrant ~/.mozilla'
 end

@@ -29,7 +29,7 @@ if platform_family?('windows')
     action :install
   end
 elsif platform_family?('mac_os_x')
-  dmg_package 'Mozilla Firefox' do
+  dmg_package 'Firefox' do
     dmg_name 'firefox'
     source url
     action :install
