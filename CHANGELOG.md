@@ -1,3 +1,6 @@
+## 2.0.1
+* Fix mac installer
+
 ## 2.0.0
 * Add support for Mac OS X, CentOS, and Ubuntu platforms
 * Automatically determine latest Firefox package version
