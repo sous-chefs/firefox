@@ -3,6 +3,7 @@ require 'openssl'
 
 # Firefox helper
 module Firefox
+  # rubocop:disable Metrics/AbcSize
   def firefox_version
     if platform_family?('windows', 'mac_os_x')
       return node['firefox']['version'] unless node['firefox']['version'] == 'latest'
