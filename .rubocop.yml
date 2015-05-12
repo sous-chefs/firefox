@@ -14,5 +14,5 @@ NumericLiterals:
   Enabled: false
 SingleSpaceBeforeFirstArg:
   Enabled: false
-Metrics/AbcSize"
+Metrics/AbcSize:
   Enabled: false
