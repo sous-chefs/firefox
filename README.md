@@ -13,7 +13,7 @@ Requirements
 Platforms
 ---------
 
-* CentOS
+* CentOS/RHEL
 * Mac OS X
 * Ubuntu
 * Windows

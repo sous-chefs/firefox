@@ -1,5 +1,9 @@
-## 2.0.1
-* Fix mac installer
+## 2.0.2
+* Fix installations on OS X
+* Fix the Windows package name in the registry to prevent installs on each r    un
+* Add a VMware Fusion Test Kitchen file for OS X testing
+* Chefspec fixes
+* Gemfile dependencies loosened
 
 ## 2.0.0
 * Add support for Mac OS X, CentOS, and Ubuntu platforms
