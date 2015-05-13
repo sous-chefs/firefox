@@ -22,7 +22,7 @@ if platform_family?('windows', 'mac_os_x')
 end
 
 if platform_family?('windows')
-  windows_package "Mozilla Firefox #{version} #{node['firefox']['lang']}" do
+  windows_package "Mozilla Firefox #{version} (x86 #{node['firefox']['lang']})" do
     source url
     installer_type :custom
     options '-ms'
