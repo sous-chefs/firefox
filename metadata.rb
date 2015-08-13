@@ -13,3 +13,6 @@ supports 'windows'
 
 suggests 'dmg', '~> 2.2'
 suggests 'windows', '~> 1.0'
+
+source_url 'https://github.com/tas50/firefox' if respond_to?(:source_url)
+issues_url 'https://github.com/tas50/firefox/issues'  if respond_to?(:issues_url)
