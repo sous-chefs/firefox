@@ -50,7 +50,7 @@ v = firefox_version
 
 License and Author
 ==================
-
+```
 Author:: Tim Smith(<tsmith84@gmail.com>)
 
 Copyright:: Copyright (c) 2012 Webtrends Inc
@@ -67,3 +67,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+```
