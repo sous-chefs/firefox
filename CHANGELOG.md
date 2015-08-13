@@ -1,3 +1,7 @@
+firefox Cookbook CHANGELOG
+==========================
+This file is used to list changes made in each version of the firefox cookbook.
+
 ## 2.0.2
 * Fix installations on OS X
 * Fix the Windows package name in the registry to prevent installs on each r    un
