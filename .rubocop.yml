@@ -8,8 +8,6 @@ CyclomaticComplexity:
   Enabled: false
 Encoding:
   Enabled: false
-HashSyntax:
-  Enabled: false
 LineLength:
   Enabled: false
 MethodLength:
