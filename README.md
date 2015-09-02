@@ -12,7 +12,7 @@ Windows and Mac OS X platforms provide an option to select a specific language w
 Requirements
 ============
 ### Chef
-Chef 11+
+* Chef 11+
 
 ### Platforms
 * CentOS/RHEL
