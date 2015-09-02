@@ -11,17 +11,18 @@ Windows and Mac OS X platforms provide an option to select a specific language w
 
 Requirements
 ============
+### Chef
 Chef 11+
-Platforms
----------
 
+### Platforms
 * CentOS/RHEL
 * Mac OS X
 * Ubuntu
 * Windows
 
-Cookbooks
----------
+### Cookbooks:
+* suggests windows
+* suggests dmg
 
 These cookbooks are referenced with suggests instead of depends, so be sure to upload the cookbook that applies to 
 target platform.
