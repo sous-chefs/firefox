@@ -6,7 +6,7 @@ description 'Installs Mozilla Firefox on multiple operating systems'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '2.0.5'
 
-%w(rhel centos scientific amazon oracle windows mac_os_x debian ubuntu).each do |os|
+%w(redhat centos scientific amazon oracle windows mac_os_x debian ubuntu).each do |os|
   supports os
 end
 
