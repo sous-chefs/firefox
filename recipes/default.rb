@@ -18,7 +18,7 @@
 
 if platform_family?('windows', 'mac_os_x')
   version = firefox_version
-  url = "#{firefox_base_uri}/#{firefox_package(version)}"
+  url = "#{firefox_base_uri}#{firefox_package(version)}"
 end
 
 if platform_family?('windows')
