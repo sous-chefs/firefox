@@ -2,6 +2,9 @@ firefox Cookbook CHANGELOG
 ==========================
 This file is used to list changes made in each version of the firefox cookbook.
 
+## 2.0.5
+* Fix redirection forbidden 
+
 ## 2.0.4
 * Update platforms tested with Kitchen CI
 * Run Travis CI tests in the container infrastructure and cache bundler installs
@@ -15,7 +18,7 @@ This file is used to list changes made in each version of the firefox cookbook.
 
 ## 2.0.2
 * Fix installations on OS X
-* Fix the Windows package name in the registry to prevent installs on each r    un
+* Fix the Windows package name in the registry to prevent installs on each run
 * Add a VMware Fusion Test Kitchen file for OS X testing
 * Chefspec fixes
 * Gemfile dependencies loosened

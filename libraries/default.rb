@@ -26,7 +26,7 @@ module Firefox
   end
 
   def firefox_base_uri
-    "#{node['firefox']['releases_url']}/#{node['firefox']['version']}/#{firefox_platform}/#{node['firefox']['lang']}"
+    "#{node['firefox']['releases_url']}/#{node['firefox']['version']}/#{firefox_platform}/#{node['firefox']['lang']}/"
   end
 
   def firefox_latest
