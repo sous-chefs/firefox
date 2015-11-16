@@ -1,3 +1,46 @@
+firefox Cookbook CHANGELOG
+==========================
+This file is used to list changes made in each version of the firefox cookbook.
+
+## 2.0.5
+* Fix redirection forbidden 
+
+## 2.0.4
+* Update platforms tested with Kitchen CI
+* Run Travis CI tests in the container infrastructure and cache bundler installs
+* Add a simple contributing doc
+* Update development dependencies and breakout gems into groups
+* Add license file
+* Add cookbook version badge to readme
+* Add cookbook and chef requirements to the readme
+* Add license to the readme
+* Add source_url and issues_url to metadata
+
+## 2.0.2
+* Fix installations on OS X
+* Fix the Windows package name in the registry to prevent installs on each run
+* Add a VMware Fusion Test Kitchen file for OS X testing
+* Chefspec fixes
+* Gemfile dependencies loosened
+
+## 2.0.0
+* Add support for Mac OS X, CentOS, and Ubuntu platforms
+* Automatically determine latest Firefox package version
+* Add firefox_version method that returns version installed
+* Add a ability to select language for Windows and Mac OS X platforms
+* Replace download URL with releases URL
+
+## 1.1.1
+* Install Firefox 32.0.3
+
+## 1.1.0
+* Install Firefox 30.0.0
+* Switch to the new URL for the Firefox download CDN
+* Add a new attribute for defining what version of Firefox to download ['firefox']['version']
+
+## 1.0.7:
+* Install Firefox 25.0.1
+
 ## 1.0.6:
 * Install Firefox 17.0.1
 
