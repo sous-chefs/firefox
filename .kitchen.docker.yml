@@ -45,7 +45,6 @@ suites:
     run_list:
       - recipe[firefox_test::default]
       - recipe[firefox_test::version]
-      - recipe[firefox_test::x11]
     attributes:
 
   - name: custom_version
