@@ -10,8 +10,8 @@ version '2.0.5'
   supports os
 end
 
-suggests 'dmg', '~> 2.2'
-suggests 'windows', '~> 1.0'
+depends 'dmg', '~> 2.2'
+depends 'windows', '>= 1.36.1'
 
 source_url 'https://github.com/tas50/firefox' if respond_to?(:source_url)
 issues_url 'https://github.com/tas50/firefox/issues' if respond_to?(:issues_url)

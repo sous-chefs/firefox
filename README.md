@@ -21,8 +21,8 @@ Requirements
 * Windows
 
 ### Cookbooks:
-* suggests windows
-* suggests dmg
+* windows
+* dmg
 
 These cookbooks are referenced with suggests instead of depends, so be sure to upload the cookbook that applies to 
 target platform.
