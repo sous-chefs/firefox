@@ -17,9 +17,6 @@ This cookbook installs the `latest` version of Firefox by default.  You can also
 - windows
 - dmg
 
-These cookbooks are referenced with suggests instead of depends, so be sure to upload the cookbook that applies to  target platform.
-- dmg
-- windows
 
 ## Attributes
 - `version` - Version of firefox to download.  Default is `latest`.
@@ -39,7 +36,7 @@ v = firefox_version
 ## License and Author
 
 ```
-Author:: Tim Smith(<tsmith84@gmail.com>)
+Author:: Tim Smith(<tsmith@chef.io>)
 
 Copyright:: Copyright (c) 2012 Webtrends Inc
 Copyright:: Copyright (c) 2014 Limelight Networks, Inc.
