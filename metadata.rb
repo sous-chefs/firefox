@@ -1,6 +1,6 @@
 name 'firefox'
-maintainer 'Tim Smith'
-maintainer_email 'tsmith84@gmail.com'
+maintainer 'Chef Software, Inc.'
+maintainer_email 'cookbooks@chef.io'
 license 'Apache 2.0'
 description 'Installs Mozilla Firefox on multiple operating systems'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
@@ -13,5 +13,5 @@ end
 depends 'dmg', '~> 2.2'
 depends 'windows', '>= 1.36.1'
 
-source_url 'https://github.com/tas50/firefox' if respond_to?(:source_url)
-issues_url 'https://github.com/tas50/firefox/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/chef-cookbooks/firefox' if respond_to?(:source_url)
+issues_url 'https://github.com/chef-cookbooks/firefox/issues' if respond_to?(:issues_url)

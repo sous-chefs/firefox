@@ -1,5 +1,5 @@
 # firefox Cookbook
-[![Build Status](https://travis-ci.org/tas50/Firefox.svg?branch=master)](https://travis-ci.org/tas50/Firefox) [![Cookbook Version](https://img.shields.io/cookbook/v/firefox.svg)](https://supermarket.chef.io/cookbooks/firefox)
+[![Build Status](https://travis-ci.org/chef-cookbooks/firefox.svg?branch=master)](https://travis-ci.org/chef-cookbooks/firefox) [![Cookbook Version](https://img.shields.io/cookbook/v/firefox.svg)](https://supermarket.chef.io/cookbooks/firefox)
 
 This cookbook installs the `latest` version of Firefox by default.  You can also specify a specific version, e.g. `33.0.1`.  Windows and Mac OS X platforms provide an option to select a specific language with `en-US` being the default.  A `firefox_version` method is also available to retrieve exact version installed.
 

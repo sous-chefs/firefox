@@ -1,5 +1,4 @@
 #
-# Author:: Timothy Smith (<tsmith@llnw.com>)
 # Cookbook Name:: firefox
 # Attribute:: default
 #
