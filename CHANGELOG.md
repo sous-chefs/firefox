@@ -1,6 +1,11 @@
 # firefox Cookbook CHANGELOG
 This file is used to list changes made in each version of the firefox cookbook.
 
+## 2.0.7
+- Transfer ownership to Chef
+- Add maintainers.md and testing.md docs
+- Add Rakefile for simplified testing
+
 ## 2.0.6
 - Require dmg and windows in the metadata instead of suggesting.  The suggests property in metadata is not actually used in depsolving and should be avoided.
 - Depend on a more recent version of the Windows cookbook that properly handles Chef 12
