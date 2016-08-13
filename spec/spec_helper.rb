@@ -1,5 +1,7 @@
 require 'chefspec'
 require 'chefspec/berkshelf'
-require_relative '../libraries/default'
 
-at_exit { ChefSpec::Coverage.report! }
+RSpec.configure do |config|
+  config.color = true
+  config.log_level = :error
+end
