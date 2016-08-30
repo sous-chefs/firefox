@@ -21,8 +21,8 @@ describe 'firefox_test::default' do
   context 'override default version and lang' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2') do |node|
-        node.set['firefox']['version'] = '29.0.1'
-        node.set['firefox']['lang'] = 'fr'
+        node.normal['firefox']['version'] = '29.0.1'
+        node.normal['firefox']['lang'] = 'fr'
       end.converge(described_recipe)
     end
 
@@ -68,7 +68,7 @@ describe 'firefox_test::default' do
   context 'linux install of specific version using package manager' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new do |node|
-        node.set['firefox']['version'] = '28.0+build2-0ubuntu2'
+        node.normal['firefox']['version'] = '28.0+build2-0ubuntu2'
       end.converge(described_recipe)
     end
 
