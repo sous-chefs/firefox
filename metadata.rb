@@ -11,7 +11,6 @@ version '2.0.7'
 end
 
 depends 'dmg', '~> 2.2'
-depends 'windows', '>= 1.36.1'
 
 source_url 'https://github.com/chef-cookbooks/firefox'
 issues_url 'https://github.com/chef-cookbooks/firefox/issues'

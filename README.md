@@ -19,7 +19,6 @@ This cookbook installs the `latest` version of Firefox by default. You can also 
 
 ### Cookbooks:
 
-- windows
 - dmg
 
 ## Attributes
@@ -31,7 +30,7 @@ This cookbook installs the `latest` version of Firefox by default. You can also 
 
 ## Usage
 
-Include the default recipe on a node's runlist to ensure that Firefox is installed.
+Include the default recipe on a node's run_list to ensure that Firefox is installed.
 
 The following example retrieves the version installed by using `firefox_version` method:
 
