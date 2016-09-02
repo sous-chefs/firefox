@@ -13,7 +13,7 @@ end
 depends 'dmg', '~> 2.2'
 depends 'windows', '>= 1.36.1'
 
-source_url 'https://github.com/chef-cookbooks/firefox' if respond_to?(:source_url)
-issues_url 'https://github.com/chef-cookbooks/firefox/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/chef-cookbooks/firefox'
+issues_url 'https://github.com/chef-cookbooks/firefox/issues'
 
-chef_version '>= 11' if respond_to?(:chef_version)
+chef_version '>= 12' if respond_to?(:chef_version)
