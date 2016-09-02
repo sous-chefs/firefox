@@ -1,6 +1,3 @@
-execute 'apt-get update' do
-  only_if { platform_family?('debian') }
-  action :nothing
-end.run_action(:run)
+apt_update 'update' if platform_family?('debian')
 
 include_recipe 'firefox::default'
