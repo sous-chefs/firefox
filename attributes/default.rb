@@ -20,4 +20,3 @@
 
 default['firefox']['version'] = 'latest'
 default['firefox']['lang'] = 'en-US'
-default['firefox']['releases_url'] = 'https://download-installer.cdn.mozilla.net/pub/firefox/releases'

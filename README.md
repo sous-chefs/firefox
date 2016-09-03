@@ -25,8 +25,6 @@ This cookbook installs the `latest` version of Firefox by default. You can also 
 
 - `version` - Version of firefox to download. Default is `latest`.
 - `lang` - Language of firefox to install. Windows and Mac OS X only. Default is `en-US`.
-- `releases_url` - URL for the releases directory for use by Windows and Mac OS X only. Linux platforms use package
-- manager.
 
 ## Usage
 

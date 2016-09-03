@@ -16,14 +16,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if platform_family?('windows', 'mac_os_x')
-  version = firefox_version
-  url = "#{firefox_base_uri}#{firefox_package(version)}"
-end
-
 if platform_family?('windows')
-  package "Mozilla Firefox #{version} (x86 #{node['firefox']['lang']})" do
-    source url
+  windows_package "Mozilla Firefox #{firefox_version} (x86 #{node['firefox']['lang']})" do
+    source ff_download_url
     installer_type :custom
     options '-ms'
     action :install
@@ -31,7 +26,7 @@ if platform_family?('windows')
 elsif platform_family?('mac_os_x')
   dmg_package 'Firefox' do
     dmg_name 'firefox'
-    source url
+    source ff_download_url
     action :install
   end
 else # assume linux platform

@@ -1,12 +1,12 @@
-require 'open-uri'
-require 'openssl'
+require 'net/http'
+require 'uri'
 
 # Firefox helper
 module Firefox
   def firefox_version
     if platform_family?('windows', 'mac_os_x')
       return node['firefox']['version'] unless node['firefox']['version'] == 'latest'
-      firefox_latest.match(/(-|%20)([\d|.]*).(exe|dmg|tar.bz2)/)[2] # http://rubular.com/r/thFO453EZZ
+      ff_download_url.match(/(-|%20)([\d|.]*).(exe|dmg|tar\.bz2)/)[2] # http://rubular.com/r/thFO453EZZ
     else
       cmd = Mixlib::ShellOut.new('firefox --version')
       cmd.run_command
@@ -15,22 +15,18 @@ module Firefox
     end
   end
 
+  def ff_download_url
+    Net::HTTP.get_response(URI.parse("https://download.mozilla.org/?product=firefox-#{node['firefox']['version']}&os=#{firefox_platform}&lang=#{node['firefox']['lang']}"))['location']
+  end
+
   # private
 
   def firefox_platform
-    if platform?('windows')
-      'win32'
-    elsif platform?('mac_os_x')
-      'mac'
+    if platform_family?('windows')
+      'win'
+    elsif platform_family?('mac_os_x')
+      'osx'
     end
-  end
-
-  def firefox_base_uri
-    "#{node['firefox']['releases_url']}/#{node['firefox']['version']}/#{firefox_platform}/#{node['firefox']['lang']}/"
-  end
-
-  def firefox_latest
-    open(firefox_base_uri, ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE).read
   end
 
   def firefox_package(version)
