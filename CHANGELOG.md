@@ -1,6 +1,13 @@
 # firefox Cookbook CHANGELOG
 This file is used to list changes made in each version of the firefox cookbook.
 
+## 3.0.0 (2016-09-02)
+- Replace apt cookbook with apt_update in test
+- Add windows boxes for testing in test kitchen
+- Require Chef 12 or later
+- Use Chef's built in package instead of windows_package from the windows cookbook
+- Fix downloading since Mozilla changed how latest works
+
 ## 2.0.7
 - Transfer ownership to Chef
 - Add maintainers.md and testing.md docs
