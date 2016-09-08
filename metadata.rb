@@ -15,4 +15,4 @@ depends 'dmg', '~> 2.2'
 source_url 'https://github.com/chef-cookbooks/firefox'
 issues_url 'https://github.com/chef-cookbooks/firefox/issues'
 
-chef_version '>= 12' if respond_to?(:chef_version)
+chef_version '>= 12.1'
