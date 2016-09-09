@@ -10,7 +10,7 @@ version '3.0.0'
   supports os
 end
 
-depends 'dmg', '~> 2.2'
+depends 'dmg', '>= 2.2'
 
 source_url 'https://github.com/chef-cookbooks/firefox'
 issues_url 'https://github.com/chef-cookbooks/firefox/issues'
