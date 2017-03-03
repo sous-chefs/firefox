@@ -1,6 +1,14 @@
 # firefox Cookbook CHANGELOG
 This file is used to list changes made in each version of the firefox cookbook.
 
+## 3.0.1 (2017-03-03)
+
+- Update the minimum chef release to 12.1 from 12.0
+- Allow dmg 3.0 cookbook by loosening the dependency
+- Cookstyle updates
+- Test with Local Delivery and not Rake
+- Remove EOL platforms from the kitchen configs and add OS X
+
 ## 3.0.0 (2016-09-02)
 - Replace apt cookbook with apt_update in test
 - Add windows boxes for testing in test kitchen
