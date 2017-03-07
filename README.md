@@ -17,7 +17,7 @@ This cookbook installs the `latest` version of Firefox by default. You can also 
 
 - Chef 12.1+
 
-### Cookbooks:
+### Cookbooks
 
 - dmg
 
