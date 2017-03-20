@@ -32,5 +32,6 @@ elsif platform_family?('mac_os_x')
 else # assume linux platform
   package 'firefox' do
     version node['firefox']['version'] unless node['firefox']['version'] == 'latest'
+    action node['firefox']['install_action'].to_sym
   end
 end

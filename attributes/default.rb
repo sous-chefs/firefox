@@ -20,3 +20,4 @@
 
 default['firefox']['version'] = 'latest'
 default['firefox']['lang'] = 'en-US'
+default['firefox']['install_action'] = :install # :install or :upgrade
