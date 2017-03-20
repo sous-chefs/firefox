@@ -9,8 +9,11 @@ module Firefox
       ff_download_url.match(/(-|%20)([\d|.]*).(exe|dmg|tar\.bz2)/)[2] # http://rubular.com/r/thFO453EZZ
     else
       cmd = Mixlib::ShellOut.new('firefox --version')
-      cmd.run_command
-      cmd.error!
+      begin
+        cmd.run_command
+      rescue Errno::ENOENT # firefox command did not exist
+        return nil if cmd.error?
+      end
       cmd.stdout.match(/Mozilla Firefox (.*)/)[1]
     end
   end
