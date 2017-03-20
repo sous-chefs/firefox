@@ -35,9 +35,6 @@ suites:
   - name: default
     run_list:
       - recipe[firefox_test::default]
-      - recipe[firefox_test::version]
-      - recipe[firefox_test::x11]
-
   - name: custom_version
     run_list:
       - recipe[firefox_test::default]
