@@ -55,7 +55,7 @@ describe 'firefox_test::default' do
     end
 
     it 'installs latest version' do
-      expect(chef_run).to upgrade_package('firefox').with(
+      expect(chef_run).to install_package('firefox').with(
         version: nil
       )
     end
@@ -76,6 +76,18 @@ describe 'firefox_test::default' do
       expect(chef_run).to install_package('firefox').with(
         version: '28.0+build2-0ubuntu2'
       )
+    end
+  end
+
+  context 'linux upgrade using package manager' do
+    let(:chef_run) do
+      ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '16.04') do |node|
+        node.normal['firefox']['install_action'] = :upgrade
+      end.converge(described_recipe)
+    end
+
+    it 'upgrades to the latest version' do
+      expect(chef_run).to upgrade_package('firefox')
     end
   end
 end
