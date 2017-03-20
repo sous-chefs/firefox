@@ -52,7 +52,9 @@ describe 'firefox_test::default' do
   end
 
   context 'linux install of latest version using package manager' do
-    let(:chef_run) { ChefSpec::SoloRunner.new.converge(described_recipe) }
+    let(:chef_run) do
+      ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '16.04').converge(described_recipe)
+    end
 
     it 'installs latest version' do
       expect(chef_run).to upgrade_package('firefox').with(
@@ -67,13 +69,13 @@ describe 'firefox_test::default' do
 
   context 'linux install of specific version using package manager' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new do |node|
+      ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '16.04') do |node|
         node.normal['firefox']['version'] = '28.0+build2-0ubuntu2'
       end.converge(described_recipe)
     end
 
     it 'installs latest version' do
-      expect(chef_run).to upgrade_package('firefox').with(
+      expect(chef_run).to install_package('firefox').with(
         version: '28.0+build2-0ubuntu2'
       )
     end
