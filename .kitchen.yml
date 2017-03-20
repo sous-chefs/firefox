@@ -14,7 +14,7 @@ platforms:
   - name: debian-7.11
   - name: debian-8.6
   - name: fedora-25
-  - name: opensuse-leap-42.1
+  - name: opensuse-leap-42.2
   - name: ubuntu-14.04
   - name: ubuntu-16.04
   - name: windows-8.1
@@ -26,10 +26,6 @@ platforms:
   - name: windows-2012r2
     driver_config:
       box: chef/windows-server-2012r2-standard
-  - name: macosx-10.10
-    driver:
-      box: chef/macosx-10.10 # private box in Chef's Atlas account
-      provider: vmware_fusion
   - name: macosx-10.11
     driver:
       box: chef/macosx-10.11 # private box in Chef's Atlas account
