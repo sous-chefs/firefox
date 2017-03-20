@@ -80,10 +80,7 @@ suites:
   - name: default
     run_list:
       - recipe[firefox_test::default]
-      - recipe[firefox_test::version]
   - name: custom_version
     run_list:
       - recipe[firefox_test::default]
     attributes: { firefox: { version: "28.0+build2-0ubuntu2" } }
-    includes:
-      - ubuntu-14.04

@@ -20,4 +20,3 @@ suites:
   - name: default
     run_list:
       - recipe[firefox_test::default]
-      - recipe[firefox_test::version]
