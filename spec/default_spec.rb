@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'firefox_test::default' do
   context 'windows install of latest version' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2') do
+      ChefSpec::SoloRunner.new(platform: 'windows', version: '2012R2') do
         allow_any_instance_of(Chef::Recipe).to receive(:ff_download_url) { 'Firefox%20Setup%2032.0.3.exe' }
       end.converge(described_recipe)
     end
@@ -20,7 +20,7 @@ describe 'firefox_test::default' do
 
   context 'override default version and lang' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2') do |node|
+      ChefSpec::SoloRunner.new(platform: 'windows', version: '2012R2') do |node|
         node.normal['firefox']['version'] = '29.0.1'
         node.normal['firefox']['lang'] = 'fr'
       end.converge(described_recipe)
@@ -38,7 +38,7 @@ describe 'firefox_test::default' do
 
   context 'mac install of latest version' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'mac_os_x', version: '10.7.4') do
+      ChefSpec::SoloRunner.new(platform: 'mac_os_x', version: '10.12') do
         allow_any_instance_of(Chef::Recipe).to receive(:ff_download_url) { 'Firefox%2032.0.3.dmg' }
       end.converge(described_recipe)
     end
