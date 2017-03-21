@@ -1,6 +1,14 @@
 # firefox Cookbook CHANGELOG
 This file is used to list changes made in each version of the firefox cookbook.
 
+## 4.0.0 (2017-03-20)
+
+- Changed the default behavior of the cookbook on Linux platforms to not install firefox during the compile phase and to use an install action not an upgrade action. The fixes race conditions between the apt_update and the installation. If you would still like to upgraade firefox by default there is an attribute to control the install action now.
+- Fixed failing Chefspecs
+- Added appveyer testing for Windows installation
+- Fixed compile time failures if firefox is not on the system at all
+- Set the minimum chef release to 12.6 so we'll have windows_package resources built in
+
 ## 3.0.1 (2017-03-03)
 
 - Update the minimum chef release to 12.1 from 12.0
