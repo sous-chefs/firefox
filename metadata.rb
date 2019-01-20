@@ -10,8 +10,6 @@ version '4.0.0'
   supports os
 end
 
-depends 'dmg', '>= 2.2'
-
 source_url 'https://github.com/chef-cookbooks/firefox'
 issues_url 'https://github.com/chef-cookbooks/firefox/issues'
-chef_version '>= 12.6' if respond_to?(:chef_version)
+chef_version '>= 14'

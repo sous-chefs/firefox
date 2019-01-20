@@ -15,11 +15,11 @@ This cookbook installs the `latest` version of Firefox by default. You can also 
 
 ### Chef
 
-- Chef 12.1+
+- Chef 14+
 
 ### Cookbooks
 
-- dmg
+- none
 
 ## Attributes
 
