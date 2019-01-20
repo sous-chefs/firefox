@@ -1,6 +1,10 @@
 # firefox Cookbook CHANGELOG
 This file is used to list changes made in each version of the firefox cookbook.
 
+## 5.0.0 (2019-01-20)
+
+- Require Chef 14+ and remove dmg dependency - [@tas50](https://github.com/tas50)
+
 ## 4.0.0 (2017-03-20)
 
 - Changed the default behavior of the cookbook on Linux platforms to not install firefox during the compile phase and to use an install action not an upgrade action. The fixes race conditions between the apt_update and the installation. If you would still like to upgraade firefox by default there is an attribute to control the install action now.
