@@ -9,6 +9,9 @@ verifier:
   name: inspec
 
 platforms:
+  - name: amazonlinux
+    driver_config:
+      box: mvbcoding/awslinux
   - name: centos-6
   - name: centos-7
   - name: debian-8
@@ -32,9 +35,9 @@ platforms:
   - name: windows-2019
     driver_config:
       box: tas50/windows_2019
-  - name: macosx-10.11
+  - name: macosx-10.12
     driver:
-      box: chef/macosx-10.11 # private box in Chef's Atlas account
+      box: chef/macosx-10.12 # private box in Chef's Atlas account
       provider: vmware_fusion
 
 suites:

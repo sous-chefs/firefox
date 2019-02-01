@@ -34,7 +34,7 @@ action_class do
 
   def do_firefox_install(install_action)
     if platform_family?('windows')
-      windows_package windows_package_string  do
+      windows_package windows_package_string do
         source ff_download_url
         installer_type :custom
         options '-ms'
@@ -52,7 +52,7 @@ action_class do
         action install_action
       end
     else
-      raise "Unsupported platform. If you believe the Firefox cookbook can and should support this platform please open a Pull Request at https://github.com/chef-cookbooks/firefox"
+      raise 'Unsupported platform. If you believe the Firefox cookbook can and should support this platform please open a Pull Request at https://github.com/chef-cookbooks/firefox'
     end
   end
 
