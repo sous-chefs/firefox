@@ -46,11 +46,13 @@ action_class do
         source ff_download_url
         action install_action
       end
-    else # assume linux platform
+    elsif node['os'] == 'linux'
       package 'firefox' do
         version new_resource.version unless new_resource.version == 'latest'
         action install_action
       end
+    else
+      raise "Unsupported platform. If you believe the Firefox cookbook can and should support this platform please open a Pull Request at https://github.com/chef-cookbooks/firefox"
     end
   end
 
