@@ -3,14 +3,14 @@ require 'spec_helper'
 describe 'firefox_test::default' do
   context 'windows install of latest version' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'windows', version: '2012R2') do
+      ChefSpec::SoloRunner.new(platform: 'windows', version: '2019') do
         allow_any_instance_of(Chef::Recipe).to receive(:ff_download_url) { 'Firefox%20Setup%2032.0.3.exe' }
       end.converge(described_recipe)
     end
 
     it 'installs latest version' do
       expect(chef_run).to install_windows_package('Mozilla Firefox 32.0.3 (x86 en-US)').with(
-        source: 'http://download.cdn.mozilla.net/pub/firefox/releases/52.0.1/win32/en-US/Firefox%20Setup%2052.0.1.exe',
+        source: 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/65.0/win32/en-US/Firefox%20Setup%2065.0.exe',
         installer_type: :custom,
         options: '-ms'
       )
@@ -27,7 +27,7 @@ describe 'firefox_test::default' do
 
     it 'installs specific version and lang' do
       expect(chef_run).to install_windows_package('Mozilla Firefox 29.0.1 (x86 fr)').with(
-        source: 'http://download.cdn.mozilla.net/pub/firefox/releases/29.0.1/win32/fr/Firefox%20Setup%2029.0.1.exe',
+        source: 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/29.0.1/win32/fr/Firefox%20Setup%2029.0.1.exe',
         installer_type: :custom,
         options: '-ms'
       )
@@ -43,7 +43,7 @@ describe 'firefox_test::default' do
 
     it 'installs latest version' do
       expect(chef_run).to install_dmg_package('Firefox').with(
-        source: 'http://download.cdn.mozilla.net/pub/firefox/releases/52.0.1/mac/en-US/Firefox%2052.0.1.dmg',
+        source: 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/65.0/mac/en-US/Firefox%2065.0.dmg',
         dmg_name: 'firefox'
       )
     end
