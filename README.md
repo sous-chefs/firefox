@@ -8,9 +8,9 @@ This cookbook provides a resource (firefox_install) for installing firefox via p
 
 ### Platforms
 
-- CentOS/RHEL
-- Mac OS X
-- Ubuntu
+- CentOS/RHEL/Amazon
+- macOS
+- Ubuntu/Debian
 - Windows
 
 ### Chef
