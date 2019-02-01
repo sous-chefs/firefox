@@ -32,8 +32,8 @@ Installs the Firefox web browser. With no properties provided the latest version
   - :upgrade - upgrade the package if a previous version already exists
 
 #### Properties
-  - lang - The language of the Firefox package to download (default: en-us)
-  - version - The version of firefox to download (default: latest)
+  - lang - Language of firefox to install. Windows and Mac OS X only. Default is `en-US`.
+  - version - Version of firefox to download. Default is `latest`.
 
 ## Recipes
 
