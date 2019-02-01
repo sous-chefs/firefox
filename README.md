@@ -25,7 +25,7 @@ This cookbook provides a resource (firefox_install) for installing firefox via p
 
 ### firefox_install
 
-Install Firefox. With no properties provided the latest version of Firefox (en-us) will be installed on the system.
+Installs the Firefox web browser. With no properties provided the latest version of Firefox (en-us) will be installed on the system.
 
 #### Actions
   - :install - install the package (default)

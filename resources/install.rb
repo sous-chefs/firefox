@@ -17,14 +17,33 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-property :version, String, default: 'latest'
-property :lang, String, default: 'en-US'
+property :version, String, default: 'latest', description: 'The version of firefox to download.'
+property :lang, String, default: 'en-US', description: 'The language of the Firefox package to download.'
+
+description 'Installs the Firefox web browser. With no properties provided the latest version of Firefox (en-us) will be installed on the system.'
+introduced '6.0.0'
+examples <<EXAMPLES
+Basic install:
+
+firefox_install 'install Firefox'
+
+Specifying a version and language
+
+firefox_install 'install Firefox' do
+  version '45.0'
+  lang 'fr'
+
+EXAMPLES
 
 action :install do
+  description 'Install the package.'
+
   do_firefox_install(:install)
 end
 
 action :upgrade do
+  description 'Upgrade the package.'
+
   do_firefox_install(:upgrade)
 end
 
