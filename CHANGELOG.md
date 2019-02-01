@@ -1,6 +1,12 @@
 # firefox Cookbook CHANGELOG
 This file is used to list changes made in each version of the firefox cookbook.
 
+## 6.0.0 (2019-02-01)
+
+- Added a new firefox_install custom resource and updated the recipe to just use the resource instead
+- Moved the previous libraries directly into the custom resource. If you were using these in a different resource or recipe they will no longer be available and you'll need to pull them into your own cookbook
+- Changed the behavior on Windows to automatically install the 64bit Firefox when on 64bit hosts
+
 ## 5.0.0 (2019-01-20)
 
 - Require Chef 14+ and remove dmg dependency - [@tas50](https://github.com/tas50)
