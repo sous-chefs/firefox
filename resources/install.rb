@@ -80,8 +80,6 @@ action_class do
     Net::HTTP.get_response(URI.parse("https://download.mozilla.org/?product=firefox-#{new_resource.version}&os=#{firefox_platform}&lang=#{new_resource.lang}"))['location']
   end
 
-  # private
-
   def firefox_platform
     if platform_family?('windows')
       node['kernel']['machine'] == 'x86_64' ? 'win64' : 'win32'

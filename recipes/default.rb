@@ -20,5 +20,5 @@
 firefox_install 'Install firefox' do
   version node['firefox']['version']
   lang node['firefox']['lang']
-  action node['firefox']['install_action'].to_sym
+  action node['firefox']['install_action']
 end
