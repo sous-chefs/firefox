@@ -9,7 +9,7 @@ describe 'firefox_test::default' do
     end
 
     it 'installs latest version' do
-      expect(chef_run).to install_windows_package('Mozilla Firefox 32.0.3 (x86 en-US)').with(
+      expect(chef_run).to install_windows_package('Mozilla Firefox 65.0.0 (x86 en-US)').with(
         source: 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/65.0/win32/en-US/Firefox%20Setup%2065.0.exe',
         installer_type: :custom,
         options: '-ms'
