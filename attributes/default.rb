@@ -18,6 +18,6 @@
 # limitations under the License.
 #
 
-default['firefox']['version'] = 'latest'
-default['firefox']['lang'] = 'en-US'
-default['firefox']['install_action'] = :install # :install or :upgrade
+default['firefox']['version'] = nil
+default['firefox']['lang'] = nil
+default['firefox']['install_action'] = nil

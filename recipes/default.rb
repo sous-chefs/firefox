@@ -3,6 +3,7 @@
 #
 # Copyright:: 2012-2018, Webtrends, Inc.
 # Copyright:: 2014-2018, Limelight Networks, Inc.
+# Copyright:: 2017-2019, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,22 +17,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if platform_family?('windows')
-  windows_package "Mozilla Firefox #{firefox_version} (x86 #{node['firefox']['lang']})" do
-    source ff_download_url
-    installer_type :custom
-    options '-ms'
-    action :install
-  end
-elsif platform_family?('mac_os_x')
-  dmg_package 'Firefox' do
-    dmg_name 'firefox'
-    source ff_download_url
-    action :install
-  end
-else # assume linux platform
-  package 'firefox' do
-    version node['firefox']['version'] unless node['firefox']['version'] == 'latest'
-    action node['firefox']['install_action'].to_sym
-  end
+firefox_install 'Install firefox' do
+  version node['firefox']['version']
+  lang node['firefox']['lang']
+  action node['firefox']['install_action']
 end

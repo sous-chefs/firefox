@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/chef-cookbooks/firefox.svg?branch=master)](https://travis-ci.org/chef-cookbooks/firefox) [![Build status](https://ci.appveyor.com/api/projects/status/29bkd4a746f97ypa/branch/master?svg=true)](https://ci.appveyor.com/project/ChefWindowsCookbooks/firefox/branch/master) [![Cookbook Version](https://img.shields.io/cookbook/v/firefox.svg)](https://supermarket.chef.io/cookbooks/firefox)
 
-This cookbook installs the `latest` version of Firefox by default. You can also specify a specific version, e.g. `33.0.1`. Windows and Mac OS X platforms provide an option to select a specific language with `en-US` being the default. A `firefox_version` method is also available to retrieve exact version installed.
+This cookbook provides a resource (firefox_install) for installing firefox via package manager or downloading the binary directory from Mozilla. The resource allows specifying the version, language, and the desired action (install vs. upgrade) to perform during the install. The cookbook also ships with a default recipe that utilizes the resource in order to provide backwards compatibility with the previous cookbook releases.
 
 ## Requirements
 
@@ -21,29 +21,40 @@ This cookbook installs the `latest` version of Firefox by default. You can also 
 
 - none
 
-## Attributes
+## Resources
+
+### firefox_install
+
+Installs the Firefox web browser. With no properties provided the latest version of Firefox (en-us) will be installed on the system.
+
+#### Actions
+  - :install - install the package (default)
+  - :upgrade - upgrade the package if a previous version already exists
+
+#### Properties
+  - lang - Language of firefox to install. Windows and Mac OS X only. Default is `en-US`.
+  - version - Version of firefox to download. Default is `latest`.
+
+## Recipes
+
+### default
+
+The default recipe exists for backwards compatibility reasons and simply calls the firefox_install resource but passes in values specified by Chef node attributes.
+
+#### Attributes
 
 - `version` - Version of firefox to download. Default is `latest`.
 - `lang` - Language of firefox to install. Windows and Mac OS X only. Default is `en-US`.
 - `install_action` - The installation action to take (:install or :upgrade). Default is `:install`
-
-## Usage
-
-Include the default recipe on a node's run_list to ensure that Firefox is installed.
-
-The following example retrieves the version installed by using `firefox_version` method:
-
-```ruby
-v = firefox_version
-```
 
 ## License and Author
 
 ```
 Author:: Tim Smith(<tsmith@chef.io>)
 
-Copyright:: Copyright (c) 2012 Webtrends Inc
-Copyright:: Copyright (c) 2014 Limelight Networks, Inc.
+Copyright:: 2012-2018, Webtrends, Inc.
+Copyright:: 2014-2018, Limelight Networks, Inc.
+Copyright:: 2017-2019, Chef Software, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
