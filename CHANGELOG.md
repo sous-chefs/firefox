@@ -3,7 +3,7 @@ This file is used to list changes made in each version of the firefox cookbook.
 
 ## 6.0.0 (2019-02-01)
 
-- Added a new firefox_install custom resource and updated the recipe to just use the resource instead
+- Added a new `firefox_install` custom resource and updated the recipe to just use the resource instead
 - Moved the previous libraries directly into the custom resource. If you were using these in a different resource or recipe they will no longer be available and you'll need to pull them into your own cookbook
 - Changed the behavior on Windows to automatically install the 64bit Firefox when on 64bit hosts
 
@@ -13,25 +13,25 @@ This file is used to list changes made in each version of the firefox cookbook.
 
 ## 4.0.0 (2017-03-20)
 
-- Changed the default behavior of the cookbook on Linux platforms to not install firefox during the compile phase and to use an install action not an upgrade action. The fixes race conditions between the apt_update and the installation. If you would still like to upgraade firefox by default there is an attribute to control the install action now.
+- Changed the default behavior of the cookbook on Linux platforms to not install Firefox during the compile phase and to use an install action not an upgrade action. The fixes race conditions between the `apt_update` and the installation. If you would still like to upgrade Firefox by default there is an attribute to control the install action now.
 - Fixed failing Chefspecs
-- Added appveyer testing for Windows installation
-- Fixed compile time failures if firefox is not on the system at all
-- Set the minimum chef release to 12.6 so we'll have windows_package resources built in
+- Added AppVeyor testing for Windows installation
+- Fixed compile time failures if Firefox is not on the system at all
+- Set the minimum Chef release to 12.6 so we'll have `windows_package` resources built in
 
 ## 3.0.1 (2017-03-03)
 
-- Update the minimum chef release to 12.1 from 12.0
+- Update the minimum Chef release to 12.1 from 12.0
 - Allow dmg 3.0 cookbook by loosening the dependency
 - Cookstyle updates
 - Test with Local Delivery and not Rake
 - Remove EOL platforms from the kitchen configs and add OS X
 
 ## 3.0.0 (2016-09-02)
-- Replace apt cookbook with apt_update in test
-- Add windows boxes for testing in test kitchen
+- Replace apt cookbook with `apt_update` in test
+- Add Windows boxes for testing in test kitchen
 - Require Chef 12 or later
-- Use Chef's built in package instead of windows_package from the windows cookbook
+- Use Chef's built in package instead of `windows_package` from the windows cookbook
 - Fix downloading since Mozilla changed how latest works
 
 ## 2.0.7
@@ -40,7 +40,7 @@ This file is used to list changes made in each version of the firefox cookbook.
 - Add Rakefile for simplified testing
 
 ## 2.0.6
-- Require dmg and windows in the metadata instead of suggesting.  The suggests property in metadata is not actually used in depsolving and should be avoided.
+- Require dmg and windows in the metadata instead of suggesting. The suggests property in metadata is not actually used in depsolving and should be avoided.
 - Depend on a more recent version of the Windows cookbook that properly handles Chef 12
 - Add full integration testing with kitchen-docker in Travis
 
@@ -54,7 +54,7 @@ This file is used to list changes made in each version of the firefox cookbook.
 - Update development dependencies and breakout gems into groups
 - Add license file
 - Add cookbook version badge to readme
-- Add cookbook and chef requirements to the readme
+- Add cookbook and Chef requirements to the readme
 - Add license to the readme
 - Add source_url and issues_url to metadata
 

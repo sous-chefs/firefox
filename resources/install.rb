@@ -17,8 +17,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-property :version, String, default: 'latest', description: 'Version of firefox to download.'
-property :lang, String, default: 'en-US', description: 'Language of firefox to install. Windows and Mac OS X only'
+property :version, String, default: 'latest', description: 'Version of Firefox to download.'
+property :lang, String, default: 'en-US', description: 'Language of Firefox to install. Windows and macOS only'
 
 description 'Installs the Firefox web browser. With no properties provided the latest version of Firefox (en-us) will be installed on the system.'
 introduced '6.0.0'

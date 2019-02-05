@@ -17,7 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-firefox_install 'Install firefox' do
+firefox_install 'Install Firefox' do
   version node['firefox']['version']
   lang node['firefox']['lang']
   action node['firefox']['install_action']

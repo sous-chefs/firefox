@@ -7,7 +7,7 @@ describe 'firefox_install on Ubuntu' do
     platform 'ubuntu'
 
     recipe do
-      firefox_install 'install firefox'
+      firefox_install 'install Firefox'
     end
 
     it { is_expected.to install_package('firefox') }
@@ -17,7 +17,7 @@ describe 'firefox_install on Ubuntu' do
     platform 'ubuntu'
 
     recipe do
-      firefox_install 'install firefox' do
+      firefox_install 'install Firefox' do
         version '45.0'
       end
     end
@@ -29,7 +29,7 @@ describe 'firefox_install on Ubuntu' do
     platform 'ubuntu'
 
     recipe do
-      firefox_install 'install firefox' do
+      firefox_install 'install Firefox' do
         version '45.0'
         action :upgrade
       end
@@ -42,7 +42,7 @@ describe 'firefox_install on Ubuntu' do
     platform 'mac_os_x'
 
     recipe do
-      firefox_install 'install firefox'
+      firefox_install 'install Firefox'
     end
 
     it { is_expected.to install_dmg_package('Firefox') }
@@ -52,7 +52,7 @@ describe 'firefox_install on Ubuntu' do
     platform 'windows'
 
     recipe do
-      firefox_install 'install firefox'
+      firefox_install 'install Firefox'
     end
 
     it {
@@ -68,7 +68,7 @@ describe 'firefox_install on Ubuntu' do
     platform 'windows'
 
     recipe do
-      firefox_install 'install firefox' do
+      firefox_install 'install Firefox' do
         lang 'fr'
         version '45.0'
       end
