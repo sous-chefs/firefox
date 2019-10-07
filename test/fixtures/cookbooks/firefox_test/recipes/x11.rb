@@ -16,7 +16,7 @@
 #   /usr/bin/xauth:  file /home/vagrant/.Xauthority does not exist
 #
 #   (process:18177): GLib-CRITICAL **: g_slice_set_config: assertion `sys_page_size  == 0' failed
-#   GLib-GIO-Message: Using the 'memory' GSettings backend.  Your settings will not be saved or shared with other applications.
+#   GLib-GIO-Message: Using the 'memory' GSettings backend. Your settings will not be saved or shared with other applications.
 #
 if platform_family?('debian', 'rhel')
   package 'xauth'
