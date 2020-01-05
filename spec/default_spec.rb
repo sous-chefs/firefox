@@ -48,23 +48,7 @@ describe 'firefox_install on Ubuntu' do
     it { is_expected.to install_dmg_package('Firefox') }
   end
 
-  context 'with default settings on Windows' do
-    platform 'windows'
-
-    recipe do
-      firefox_install 'install firefox'
-    end
-
-    it {
-      is_expected.to install_windows_package('Mozilla Firefox 65.0 (x86_64 en-US)').with(
-        source: 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/65.0/win64/en-US/Firefox%20Setup%2065.0.exe',
-        installer_type: :custom,
-        options: '-ms'
-      )
-    }
-  end
-
-  context 'with default settings on Windows' do
+  context 'with vesion specified on Windows' do
     platform 'windows'
 
     recipe do
