@@ -89,7 +89,7 @@ action_class do
       begin
         cmd.run_command
       rescue Errno::ENOENT # firefox command did not exist
-        return nil if cmd.error?
+        return if cmd.error?
       end
       cmd.stdout.match(/Mozilla Firefox (.*)/)[1]
     end
