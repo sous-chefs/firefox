@@ -28,12 +28,14 @@ This cookbook provides a resource (firefox_install) for installing firefox via p
 Installs the Firefox web browser. With no properties provided the latest version of Firefox (en-us) will be installed on the system.
 
 #### Actions
-  - :install - install the package (default)
-  - :upgrade - upgrade the package if a previous version already exists
+
+- :install - install the package (default)
+- :upgrade - upgrade the package if a previous version already exists
 
 #### Properties
-  - lang - Language of firefox to install. Windows and macOS only. Default is `en-US`.
-  - version - Version of firefox to download. Default is `latest`.
+
+- lang - Language of firefox to install. Windows and macOS only. Default is `en-US`.
+- version - Version of firefox to download. Default is `latest`.
 
 ## Recipes
 
