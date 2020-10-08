@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update Changelog to Sous Chefs
 - Update to use Sous Chefs GH workflow
 
+### Fixed
+
+- Yamllint fixes
+
 ## 6.0.0 (2019-02-01)
 
 - Added a new firefox_install custom resource and updated the recipe to just use the resource instead
