@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Yamllint fixes
 - MDL Fixes
 
+### Removed
+
+- Remove Amazon Linux 1 testing
+
 ## 6.0.0 (2019-02-01)
 
 - Added a new firefox_install custom resource and updated the recipe to just use the resource instead
