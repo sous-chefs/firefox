@@ -8,7 +8,6 @@ source_url        'https://github.com/sous-chefs/firefox'
 issues_url        'https://github.com/sous-chefs/firefox/issues'
 chef_version      '>= 14'
 
-supports 'amazon'
 supports 'centos'
 supports 'debian'
 supports 'mac_os_x'
