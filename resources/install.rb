@@ -19,6 +19,7 @@
 
 property :version, String, default: 'latest', description: 'Version of firefox to download.'
 property :lang, String, default: 'en-US', description: 'Language of firefox to install. Windows and Mac OS X only'
+property :package_name, String, default: lazy { firefox_package_name }, description: 'Package name to install'
 
 description 'Installs the Firefox web browser. With no properties provided the latest version of Firefox (en-us) will be installed on the system.'
 introduced '6.0.0'
@@ -67,11 +68,12 @@ action_class do
       end
     elsif node['os'] == 'linux'
       package 'firefox' do
+        package_name new_resource.package_name
         version new_resource.version unless new_resource.version == 'latest'
         action install_action
       end
     else
-      raise 'Unsupported platform. If you believe the Firefox cookbook can and should support this platform please open a Pull Request at https://github.com/chef-cookbooks/firefox'
+      raise 'Unsupported platform. If you believe the Firefox cookbook can and should support this platform please open a Pull Request at https://github.com/sous-chefs/firefox'
     end
   end
 

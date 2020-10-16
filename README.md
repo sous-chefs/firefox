@@ -42,8 +42,9 @@ Installs the Firefox web browser. With no properties provided the latest version
 
 #### Properties
 
-- lang - Language of firefox to install. Windows and macOS only. Default is `en-US`.
-- version - Version of firefox to download. Default is `latest`.
+- `lang` - Language of firefox to install. Windows and macOS only. Default is `en-US`.
+- `version` - Version of firefox to download. Default is `latest`.
+- `package_name` - Package name to install. Default is `firefox_package_name` helper method.
 
 ## Recipes
 

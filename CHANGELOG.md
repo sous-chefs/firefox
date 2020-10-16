@@ -22,6 +22,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Yamllint fixes
 - MDL Fixes
 
+### Added
+
+- Add `package_name` property to `firefox_install` resource and helper method
+
 ### Removed
 
 - Remove Amazon Linux Support
