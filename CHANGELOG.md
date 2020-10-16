@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add `package_name` property to `firefox_install` resource and helper method
+- Add CentOS 8 testing
 
 ### Removed
 
