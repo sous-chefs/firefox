@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update metadata.rb to Sous Chefs
 - Update test-kitchen to Sous Chefs
 - Migrate to InSpec for tests
+- Move `firefox_install` library methods to helper file
 
 ### Fixed
 
@@ -32,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Remove Amazon Linux Support
 - Remove EL 6 testing
+- Remove unused `firefox_package` method
 
 ## 6.0.0 (2019-02-01)
 
