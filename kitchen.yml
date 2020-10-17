@@ -22,28 +22,48 @@ platforms:
   - name: ubuntu-16.04
   - name: ubuntu-18.04
   - name: ubuntu-20.04
-  - name: windows-8.1
-    driver_config:
-      box: chef/windows-8.1-professional  # private box in Chef's Atlas account
   - name: windows-10
+    transport:
+      name: winrm
+      elevated: true
     driver_config:
       box: tas50/windows_10
-  - name: windows-2008r2
-    driver_config:
-      box: tas50/windows_2008r2
+      gui: false
+      customize:
+        memory: 4096
   - name: windows-2012r2
+    transport:
+      name: winrm
+      elevated: true
     driver_config:
       box: tas50/windows_2012r2
+      gui: false
+      customize:
+        memory: 4096
   - name: windows-2016
+    transport:
+      name: winrm
+      elevated: true
     driver_config:
       box: tas50/windows_2016
+      gui: false
+      customize:
+        memory: 4096
   - name: windows-2019
+    transport:
+      name: winrm
+      elevated: true
     driver_config:
       box: tas50/windows_2019
-  - name: macosx-10.12
+      gui: false
+      customize:
+        memory: 4096
+  - name: macos-10.15
     driver:
-      box: chef/macosx-10.12  # private box in Chef's Atlas account
-      provider: vmware_fusion
+      box: tas50/macos_10.15
+      gui: true
+      customize:
+        memory: 4096
 
 suites:
   - name: default
