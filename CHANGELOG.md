@@ -5,6 +5,13 @@ This file is used to list changes made in each version of the firefox cookbook.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.1.14](https://github.com/sous-chefs/firefox/compare/6.1.13...v6.1.14) (2025-10-15)
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#43](https://github.com/sous-chefs/firefox/issues/43)) ([7a766d7](https://github.com/sous-chefs/firefox/commit/7a766d74328c8d29899a2605f2d415871f5829c9))
+
 ## 6.1.3 - *2023-02-14*
 
 * Remove delivery folder
