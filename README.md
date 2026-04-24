@@ -6,7 +6,9 @@
 [![OpenCollective](https://opencollective.com/sous-chefs/sponsors/badge.svg)](#sponsors)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
-This cookbook provides a resource (firefox_install) for installing firefox via package manager or downloading the binary directory from Mozilla. The resource allows specifying the version, language, and the desired action (install vs. upgrade) to perform during the install. The cookbook also ships with a default recipe that utilizes the resource in order to provide backwards compatibility with the previous cookbook releases.
+This cookbook provides a `firefox_install` resource for installing Firefox via Mozilla package repositories, platform package managers, or Mozilla downloads on Windows and macOS. The resource allows specifying the version, language, repository behavior, and desired action.
+
+See [migration.md](migration.md) for migration guidance from the removed default recipe and node attributes.
 
 ## Maintainers
 
@@ -16,18 +18,26 @@ This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of
 
 ### Platforms
 
-- CentOS/RHEL
-- macOS
-- Ubuntu
-- Windows
+* AlmaLinux
+* Amazon Linux
+* CentOS Stream
+* Debian
+* Fedora
+* macOS
+* openSUSE Leap
+* Oracle Linux
+* Red Hat Enterprise Linux
+* Rocky Linux
+* Ubuntu
+* Windows
 
 ### Chef
 
-- Chef 14+
+* Chef 15.3+
 
 ### Cookbooks
 
-- none
+* none
 
 ## Resources
 
@@ -37,26 +47,17 @@ Installs the Firefox web browser. With no properties provided the latest version
 
 #### Actions
 
-- :install - install the package (default)
-- :upgrade - upgrade the package if a previous version already exists
+* `:install` - install Firefox (default)
+* `:upgrade` - upgrade Firefox if a previous version already exists
 
 #### Properties
 
-- `lang` - Language of firefox to install. Windows and macOS only. Default is `en-US`.
-- `version` - Version of firefox to download. Default is `latest`.
-- `package_name` - Package name to install. Default is `firefox_package_name` helper method.
+* `lang` - Language of Firefox to install. Windows and macOS only. Default is `en-US`.
+* `manage_repository` - Configure Mozilla APT repositories on Debian-family Linux. Default is `true`.
+* `package_name` - Package name to install on Linux. Default is computed by platform and repository mode.
+* `version` - Version of Firefox to install. Default is `latest`.
 
-## Recipes
-
-### default
-
-The default recipe exists for backwards compatibility reasons and simply calls the firefox_install resource but passes in values specified by Chef node attributes.
-
-#### Attributes
-
-- `version` - Version of firefox to download. Default is `latest`.
-- `lang` - Language of firefox to install. Windows and macOS only. Default is `en-US`.
-- `install_action` - The installation action to take (:install or :upgrade). Default is `:install`
+Full resource documentation is available in [documentation/firefox_install.md](documentation/firefox_install.md).
 
 ## Contributors
 

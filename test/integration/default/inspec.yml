@@ -1,0 +1,7 @@
+---
+name: default
+title: Firefox Default Tests
+maintainer: Sous Chefs
+license: Apache-2.0
+summary: Verifies Firefox is installed
+version: 1.0.0
