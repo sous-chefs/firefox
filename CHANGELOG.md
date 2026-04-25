@@ -5,6 +5,22 @@ This file is used to list changes made in each version of the firefox cookbook.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [7.0.0](https://github.com/sous-chefs/firefox/compare/v6.1.14...v7.0.0) (2026-04-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate firefox to resource API ([#49](https://github.com/sous-chefs/firefox/issues/49))
+
+### Features
+
+* migrate firefox to resource API ([#49](https://github.com/sous-chefs/firefox/issues/49)) ([f8849e2](https://github.com/sous-chefs/firefox/commit/f8849e28e1ae0d5d72d429b50d722b9082b91a1f))
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#43](https://github.com/sous-chefs/firefox/issues/43)) ([7a766d7](https://github.com/sous-chefs/firefox/commit/7a766d74328c8d29899a2605f2d415871f5829c9))
+
 ## [6.1.14](https://github.com/sous-chefs/firefox/compare/6.1.13...v6.1.14) (2025-10-15)
 
 
