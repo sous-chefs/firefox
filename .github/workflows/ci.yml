@@ -32,14 +32,14 @@ jobs:
           - "debian-12"
           - "debian-13"
           - "fedora-43"
-          - "opensuse-leap-16.0"
+          - "opensuse-leap-160"
           - "oraclelinux-8"
           - "oraclelinux-9"
           - "rockylinux-8"
           - "rockylinux-9"
           - "rockylinux-10"
-          - "ubuntu-22.04"
-          - "ubuntu-24.04"
+          - "ubuntu-2204"
+          - "ubuntu-2404"
         suite:
           - "default"
       fail-fast: false
