@@ -1,24 +1,36 @@
+# frozen_string_literal: true
+
 module Firefox
   module Cookbook
     module Helpers
-      def do_firefox_install(install_action)
+      def install_firefox(install_action)
         if platform_family?('windows')
-          windows_package ff_windows_package_string do
-            source ff_download_url
+          desired_package_name = ff_windows_package_string
+          source_url = ff_download_url
+
+          windows_package desired_package_name do
+            source source_url
             installer_type :custom
             options '-ms'
             action install_action
           end
         elsif platform_family?('mac_os_x')
+          source_url = ff_download_url
+
           dmg_package 'Firefox' do
             dmg_name 'firefox'
-            source ff_download_url
+            source source_url
             action install_action
           end
         elsif node['os'] == 'linux'
+          configure_firefox_repository if new_resource.manage_repository
+
+          desired_package_name = new_resource.package_name
+          version = new_resource.version
+
           package 'firefox' do
-            package_name new_resource.package_name
-            version new_resource.version unless new_resource.version == 'latest'
+            package_name desired_package_name
+            version version unless version == 'latest'
             action install_action
           end
         else
@@ -26,7 +38,9 @@ module Firefox
         end
       end
 
-      def firefox_package_name
+      def default_firefox_package_name(repository_managed)
+        return 'firefox' if repository_managed && platform_family?('debian')
+
         case node['platform_family']
         when 'suse'
           'MozillaFirefox'
@@ -37,7 +51,34 @@ module Firefox
         end
       end
 
-      private
+      def configure_firefox_repository
+        configure_firefox_apt_repository if platform_family?('debian')
+      end
+
+      def configure_firefox_apt_repository
+        package %w(ca-certificates gnupg)
+
+        apt_repository 'mozilla' do
+          uri 'https://packages.mozilla.org/apt'
+          components ['main']
+          distribution 'mozilla'
+          key 'https://packages.mozilla.org/apt/repo-signing-key.gpg'
+        end
+
+        apt_update 'mozilla' do
+          action :nothing
+        end
+
+        file '/etc/apt/preferences.d/mozilla' do
+          content <<~PREFERENCES
+            Package: *
+            Pin: origin packages.mozilla.org
+            Pin-Priority: 1000
+          PREFERENCES
+          mode '0644'
+          notifies :update, 'apt_update[mozilla]', :immediately
+        end
+      end
 
       def ff_windows_package_string
         arch = node['kernel']['machine'] == 'x86_64' ? 'x86_64' : 'x86'
@@ -60,9 +101,7 @@ module Firefox
       end
 
       def ff_download_url
-        require 'net/http'
-        require 'uri'
-        Net::HTTP.get_response(URI.parse("https://download.mozilla.org/?product=firefox-#{new_resource.version}&os=#{firefox_platform}&lang=#{new_resource.lang}"))['location']
+        "https://download.mozilla.org/?product=firefox-#{new_resource.version}&os=#{firefox_platform}&lang=#{new_resource.lang}"
       end
 
       def firefox_platform
@@ -75,5 +114,3 @@ module Firefox
     end
   end
 end
-Chef::DSL::Recipe.include ::Firefox::Cookbook::Helpers
-Chef::Resource.include ::Firefox::Cookbook::Helpers
